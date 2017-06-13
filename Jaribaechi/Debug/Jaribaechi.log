@@ -1,2 +1,11 @@
-﻿  JaribaechiMain.cpp
-LINK : fatal error LNK1104: 'C:\Users\dsm2017\Google 드라이브\자료\프로젝트\GitHub\Jaribaechi\Jaribaechi\Debug\Jaribaechi.ilk' 파일을 열 수 없습니다.
+﻿  main.cpp
+c:\users\dsm2017\google 드라이브\자료\프로젝트\github\jaribaechi\jaribaechi\jaribaechi\main.cpp(76): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\conio.h(452): note: 'getch' 선언을 참조하십시오.
+c:\users\dsm2017\google 드라이브\자료\프로젝트\github\jaribaechi\jaribaechi\jaribaechi\main.cpp(113): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\conio.h(452): note: 'getch' 선언을 참조하십시오.
+c:\users\dsm2017\google 드라이브\자료\프로젝트\github\jaribaechi\jaribaechi\jaribaechi\main.cpp(127): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\conio.h(452): note: 'getch' 선언을 참조하십시오.
+  JaribaechiMain.cpp
+  코드를 생성하고 있습니다...
+  Jaribaechi.vcxproj -> C:\Users\dsm2017\Google 드라이브\자료\프로젝트\GitHub\Jaribaechi\Jaribaechi\Debug\Jaribaechi.exe
+  Jaribaechi.vcxproj -> C:\Users\dsm2017\Google 드라이브\자료\프로젝트\GitHub\Jaribaechi\Jaribaechi\Debug\Jaribaechi.pdb (Partial PDB)
