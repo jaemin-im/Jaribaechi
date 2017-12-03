@@ -1,14 +1,14 @@
 #include "JRBCH.h"
 
 int main(int argc, char** argv) {
-	int OriginalSeat[GROUP][GROUP_STUDENT] = { 0 }; // 원래 자리
-	int RandomizedSeat[GROUP][GROUP_STUDENT] = { 0 }; // 랜덤화될 자리
-	bool CheckExistNum[STUDENT] = { false }; // 중복 확인 배열
+	int OriginalSeat[GROUP][GROUP_STUDENT] = { 0 };
+	int RandomizedSeat[GROUP][GROUP_STUDENT] = { 0 };
+	bool CheckExistNum[STUDENT] = { false };
 
-	char input; // 아무 키나 누르십시오 입력
-	int randomize_count = 0; // 랜덤 횟수
+	char input;
+	int randomize_count = 0;
 
-	srand((unsigned)time(NULL)); // 랜덤 상수 초기화
+	srand((unsigned)time(NULL));
 
 	cout << "자리배치 프로그램" << endl;
 	cout << "입력/출력 예시 : \n┌─┬─┐\n│ 1│ 2│\n├─┼─┤\n│ 3│ 4│\n└─┴─┘" << endl;
@@ -19,9 +19,9 @@ int main(int argc, char** argv) {
 
 		cout << "원래 자리를 입력하여 주십시오. (A모둠부터 E모둠까지 학생의 번호) " << endl;
 
-		for (int i = 0; i < GROUP; i++) { // GROUP 수만큼 반복
+		for (int i = 0; i < GROUP; i++) {
 
-			switch (i) { // 입력 확인
+			switch (i) {
 			case 0:
 				cout << "A모둠 입력 : " << endl;
 				break;
@@ -39,7 +39,7 @@ int main(int argc, char** argv) {
 				break;
 			}
 
-			for (int j = 0; j < GROUP_STUDENT; j++) { // 모둠의 학생 수만큼 입력
+			for (int j = 0; j < GROUP_STUDENT; j++) {
 
 				cin >> OriginalSeat[i][j];
 
@@ -62,7 +62,7 @@ int main(int argc, char** argv) {
 
 		cin >> input;
 
-		if (input == 'y' || input == 'Y') goto INPUT_EXIT; // 입력 확인
+		if (input == 'y' || input == 'Y') goto INPUT_EXIT;
 		else {
 			cout << "자리를 재입력하십시오." << endl;
 			continue;
@@ -70,7 +70,6 @@ int main(int argc, char** argv) {
 	}
 	
 INPUT_EXIT:
-
 	fflush(stdin);
 	cout << "새로운 자리배치를 시작합니다. 아무 키나 누르십시오.\n" << endl;
 	input = getch();
@@ -78,11 +77,10 @@ INPUT_EXIT:
 	// 자리배치 시작
 
 RERANDOMIZE:
-
 	for (int i = 0; i < GROUP; i++) {
 		for (int j = 0; j < GROUP_STUDENT; ) {
 			int tempNum = randomize();
-			if(CheckExistNum[tempNum] == false) { // 난수가 중복되지 않게 함
+			if(CheckExistNum[tempNum] == false) {
 				CheckExistNum[tempNum] = true;
 				RandomizedSeat[i][j] = tempNum+1;
 				++j;
@@ -95,13 +93,13 @@ RERANDOMIZE:
 			if (RandomizedSeat[i][j] == OriginalSeat[i][0] ||
 				RandomizedSeat[i][j] == OriginalSeat[i][1] ||
 				RandomizedSeat[i][j] == OriginalSeat[i][2] ||
-				RandomizedSeat[i][j] == OriginalSeat[i][3]) // 랜덤화 자리가 예전 자리와 같은 모둠일 때
+				RandomizedSeat[i][j] == OriginalSeat[i][3]) // 랜덤화 자리가 예전 자리와 같은 조일 때
 			{
 				for (int k = 0; k < STUDENT; k++) {
 					CheckExistNum[k] = false;
 				}
 				++randomize_count;
-				goto RERANDOMIZE; // 재랜덤화
+				goto RERANDOMIZE;
 			}
 		}
 	}
@@ -129,5 +127,5 @@ RERANDOMIZE:
 }
 
 int randomize(void) {
-	return (rand() % 20); // 랜덤 함수
+	return (rand() % 20);
 }
